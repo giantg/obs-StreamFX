@@ -1045,7 +1045,7 @@ void ffmpeg_factory::get_defaults2(obs_data_t* settings)
 	if (_handler)
 		_handler->get_defaults(settings, _avcodec, nullptr, _handler->is_hardware_encoder(this));
 
-	if ((_avcodec->capabilities & AV_CODEC_CAP_INTRA_ONLY) == 0) {
+	if ((_avcodec->capabilities & AV_CODEC_PROP_INTRA_ONLY) == 0) {
 		obs_data_set_default_int(settings, ST_KEY_KEYFRAMES_INTERVALTYPE, 0);
 		obs_data_set_default_double(settings, ST_KEY_KEYFRAMES_INTERVAL_SECONDS, 2.0);
 		obs_data_set_default_int(settings, ST_KEY_KEYFRAMES_INTERVAL_FRAMES, 300);
